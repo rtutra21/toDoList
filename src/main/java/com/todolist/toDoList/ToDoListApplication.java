@@ -1,7 +1,15 @@
 package com.todolist.toDoList;
 
+import com.todolist.toDoList.model.Priority;
+import com.todolist.toDoList.model.Status;
+import com.todolist.toDoList.model.Task;
+import com.todolist.toDoList.repository.TaskRepository;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import java.time.LocalDate;
 
 @SpringBootApplication
 public class ToDoListApplication {
