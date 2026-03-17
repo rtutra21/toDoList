@@ -34,11 +34,38 @@ public class ToDoListApplication {
 					.description("У друга отмечается день рождения")
 					.status(Status.IN_PROGRESS)
 					.priority(Priority.MEDIUM)
-					.dueDate(LocalDate.of(2025, 01, 01))
+					.dueDate(LocalDate.of(2025, 1, 1))
+					.build();
+
+			Task task3 = Task.builder() // создание третьей таски на репозитории
+					.title("Подготовка к экзамену")
+					.description("Изучить материалы по Java Spring")
+					.status(Status.NEW)
+					.priority(Priority.HIGH)
+					.dueDate(LocalDate.of(2025, 12, 15))
+					.build();
+
+			Task task4 = Task.builder() // создание четвертой таски на репозитории
+					.title("Покупка продуктов")
+					.description("Сходить в магазин за продуктами на неделю")
+					.status(Status.COMPLETED)
+					.priority(Priority.LOW)
+					.dueDate(LocalDate.of(2025, 12, 5))
+					.build();
+
+			Task task5 = Task.builder() // создание пятой таски на репозитории
+					.title("Спортивная тренировка")
+					.description("Посетить фитнес-клуб")
+					.status(Status.IN_PROGRESS)
+					.priority(Priority.MEDIUM)
+					.dueDate(LocalDate.of(2025, 12, 8))
 					.build();
 
 			repository.save(task1); // сохранение задач в репозитории
 			repository.save(task2);
+			repository.save(task3);
+			repository.save(task4);
+			repository.save(task5);
 
 			System.out.println("Все задачи на сегодня:");
 			repository.findAll()

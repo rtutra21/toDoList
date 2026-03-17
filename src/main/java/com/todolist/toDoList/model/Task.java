@@ -1,6 +1,8 @@
 package com.todolist.toDoList.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,15 +26,19 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotBlank(message = "Сообщение не может быть пустым")
     private String title;
     private String description;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false) // поле status не может быть null (пустым)
+    @Column(nullable = false)
+    @NotNull (message = "Должен быть заполнен")
     private Status status;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false) // поле priorty также не может быть null (пустым)
+    @Column(nullable = false)
+    @NotNull (message = "Приоритет должен быть выбран")
     private Priority priority;
 
 
